@@ -1,0 +1,20 @@
+<section class="posts-area">
+  <h1 class="mat-h1">Albums</h1>
+  <mat-accordion *ngIf="requestAlbums$ | async as albums">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false"
+                        *ngFor="let a of albums">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>account_circle</mat-icon>
+          {{a.id}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{a.title}} 
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p><strong>Id do usuário: {{a.userId}}</strong></p>
+    </mat-expansion-panel>
+  </mat-accordion> 
+</section>
+
